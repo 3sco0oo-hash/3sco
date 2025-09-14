@@ -52,6 +52,7 @@ body {
   display: flex;
   gap: 25px;
   margin-bottom: 40px;
+  margin: 0 auto;
 }
 
 .socials a {
@@ -61,6 +62,9 @@ body {
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
   animation: gradientMove 5s ease infinite;
+}
+.socials p {
+  margin-top: 0 auto;
 }
 
 .socials a:hover {
