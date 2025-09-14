@@ -1,0 +1,80 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #f0f, 0 0 30px #0f0;
+  margin-bottom: 20px;
+  animation: gradientMove 5s ease infinite;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid transparent;
+  border-image: linear-gradient(90deg, #00f0ff, #ff00ff, #00ff9d) 1;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0f0;
+  margin-bottom: 20px;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0f0; }
+  to { box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0; }
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.socials a {
+  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+  animation: gradientMove 5s ease infinite;
+}
+
+.socials a:hover {
+  transform: scale(1.3);
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
