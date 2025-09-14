@@ -91,12 +91,17 @@ body {
   font-weight: bold;
   text-decoration: none;
 
-  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease;
-  animation: gradientMove 5s ease infinite;
+  background: #111; /* warna dasar tombol */
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.link-buttons a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #25D366, #128C7E); /* gradasi WhatsApp */
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.7);
 }
 
 footer {
