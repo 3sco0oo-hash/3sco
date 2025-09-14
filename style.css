@@ -52,19 +52,21 @@ body {
   display: flex;
   gap: 25px;
   margin-bottom: 40px;
-  margin: 0 auto;
 }
 
 .socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  
   background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
   animation: gradientMove 5s ease infinite;
-}
-.socials p {
-  margin-top: 0 auto;
 }
 
 .socials a:hover {
