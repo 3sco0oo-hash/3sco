@@ -86,9 +86,10 @@ body {
   justify-content: flex-start;
   gap: 10px;
 
-  width: 100%;
+  width: 150%;
   max-width: 320px;
   height: 55px;
+  margin: 0 auto;
 
   padding: 0 20px;
   border-radius: 12px;
