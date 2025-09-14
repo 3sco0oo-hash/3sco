@@ -10,7 +10,7 @@
 <body>
 
   <!-- Toggle Dark/Light Mode (pojok kiri atas) -->
-  <button id="theme-toggle">🌙</button>
+  <button id="theme-toggle"><i class="fas fa-moon"></i></button>
 
   <!-- Foto Profil -->
   <div class="profile-pic">
@@ -49,9 +49,19 @@
   <!-- Script -->
   <script>
     const toggleBtn = document.getElementById("theme-toggle");
+
     toggleBtn.addEventListener("click", () => {
+      // Animasi putar ikon
+      toggleBtn.classList.add("rotate");
+      setTimeout(() => toggleBtn.classList.remove("rotate"), 500);
+
+      // Toggle tema
       document.body.classList.toggle("light-theme");
-      toggleBtn.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
+
+      // Ganti ikon
+      toggleBtn.innerHTML = document.body.classList.contains("light-theme") 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
     });
   </script>
 
