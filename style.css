@@ -72,19 +72,6 @@ body {
 .socials a:hover {
   transform: scale(1.3);
 }
-.corner-name {
-  position: fixed;
-  top: 15px;
-  left: 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease;
-  animation: gradientMove 5s ease infinite;
-}
 
 footer {
   position: absolute;
