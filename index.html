@@ -20,44 +20,65 @@
   <!-- Menu -->
   <h4><em class="neon-text">Menu:</em></h4>
   <div class="link-buttons">
-  <!-- WhatsApp -->
-  <a href="https://wa.me/6281411086900?text=Halo%20kak%2C%20saya%20mau%20buy%20am%20prem" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    Buy Am Prem Here!
-  </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281411086900?text=Halo%20kak%2C%20saya%20mau%20buy%20am%20prem" target="_blank" class="reveal">
+      <i class="fab fa-whatsapp"></i>
+      Buy Am Prem Here!
+    </a>
 
-  <!-- Alight Motion -->
-  <a href="https://whatsapp.com/channel/0029VbBDcQ0EAKWE1WBpy11g" target="_blank">
-    <img src="alightmotion.png" alt="Alight Motion" class="icon-am">
-    Preset Here!
-  </a>
+    <!-- Alight Motion -->
+    <a href="https://whatsapp.com/channel/0029VbBDcQ0EAKWE1WBpy11g" target="_blank" class="reveal">
+      <img src="alightmotion.png" alt="Alight Motion" class="icon-am">
+      Preset Here!
+    </a>
 
-  <!-- Discord -->
-  <a href="https://discord.gg/eHGcj6HUJd" target="_blank">
-    <i class="fab fa-discord"></i>
-    Discord Server
-  </a>
-  
-    <!-- Wa Prib -->
-  <a href="https://whatsapp.com/6281411086900" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    Whatsapp Owner
-  </a>
-  
-  <!--Instagram -->
-  <a href="https://instagram.com/steshhv" target="_blank">
-    <i class="fab fa-instagram"></i>
-    Instagram Owner
-  </a>
-    <!-- tiktok -->
-  <a href="https://tiktok.com/@ner_prst" target="_blank">
-    <i class="fab fa-tiktok"></i>
-    Tiktok Owner
-  </a>
-</div>
+    <!-- Discord -->
+    <a href="https://discord.gg/eHGcj6HUJd" target="_blank" class="reveal">
+      <i class="fab fa-discord"></i>
+      Discord Server
+    </a>
+    
+    <!-- WhatsApp Owner -->
+    <a href="https://wa.me/6281411086900" target="_blank" class="reveal">
+      <i class="fab fa-whatsapp"></i>
+      Whatsapp Owner
+    </a>
+    
+    <!-- Instagram -->
+    <a href="https://instagram.com/steshhv" target="_blank" class="reveal">
+      <i class="fab fa-instagram"></i>
+      Instagram Owner
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@ner_prst" target="_blank" class="reveal">
+      <i class="fab fa-tiktok"></i>
+      Tiktok Owner
+    </a>
+  </div>
 
   <!-- Lisensi -->
   <footer>© 2025 Wilie. All rights reserved.</footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("show");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
 
 </body>
 </html>

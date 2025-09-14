@@ -3,7 +3,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
   color: white;
   margin: 0;
@@ -11,6 +10,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -29,6 +29,7 @@ html {
   text-shadow: 0 0 10px #0ff, 0 0 20px #f0f, 0 0 30px #0f0;
   margin-bottom: 20px;
   animation: gradientMove 5s ease infinite;
+  text-align: center;
 }
 
 .profile-pic {
@@ -52,31 +53,25 @@ html {
   object-fit: cover;
 }
 
-  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease;
-  animation: gradientMove 5s ease infinite;
-
+/* Tombol Menu */
 .link-buttons {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
+  width: 100%;
+  max-width: 600px;  /* biar di desktop rapi */
 }
 
 .link-buttons a {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 10px;
 
   width: 100%;
-  max-width: 320px;
   height: 55px;
 
-  padding: 0 20px;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: bold;
@@ -84,10 +79,11 @@ html {
 
   background: #111;
   color: white;
-  box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0f0;
   transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .link-buttons a:hover {
   transform: scale(1.05);
   background: linear-gradient(90deg, #00f0ff, #ff00ff, #00ff99);
@@ -95,15 +91,37 @@ html {
   box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0;
 }
 
+/* Icon Alight Motion */
 .icon-am {
   width: 28px;
   height: 28px;
   object-fit: contain;
 }
 
+/* Footer */
 footer {
-  position: absolute;
-  bottom: 15px;
+  text-align: center;
+  margin: 30px 0;
   font-size: 0.9rem;
   color: #aaa;
 }
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay */
+.link-buttons a:nth-child(1).show { transition-delay: 0.1s; }
+.link-buttons a:nth-child(2).show { transition-delay: 0.2s; }
+.link-buttons a:nth-child(3).show { transition-delay: 0.3s; }
+.link-buttons a:nth-child(4).show { transition-delay: 0.4s; }
+.link-buttons a:nth-child(5).show { transition-delay: 0.5s; }
+.link-buttons a:nth-child(6).show { transition-delay: 0.6s; }
