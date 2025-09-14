@@ -73,8 +73,11 @@ body {
   transform: scale(1.3);
 }
 .corner-name {
+  position: fixed;
   top: 15px;
   left: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
   background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
   background-size: 600% 600%;
   -webkit-background-clip: text;
