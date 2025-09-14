@@ -52,30 +52,12 @@ html {
   object-fit: cover;
 }
 
-.socials {
-  display: flex;
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-.socials a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  
   background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
   animation: gradientMove 5s ease infinite;
-}
-
-.socials a:hover {
-  transform: scale(1.3);
-}
 
 .link-buttons {
   display: flex;
@@ -102,7 +84,7 @@ html {
 
   background: #111;
   color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0;
   transition: all 0.3s ease;
 }
 
