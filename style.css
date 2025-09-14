@@ -117,7 +117,7 @@ body {
 .007unit-png {
   width: 28px;
   height: 28px;
-  object-fit: contain
+  object-fit: contain;
 }
 
 footer {
