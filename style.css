@@ -18,7 +18,7 @@ body.light-theme {
 }
 html { scroll-behavior: smooth; }
 
-/* Neon text */
+/* Neon text + pulse */
 .neon-text {
   background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
   background-size: 600% 600%;
@@ -26,16 +26,27 @@ html { scroll-behavior: smooth; }
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
   text-align: center;
+  animation: neonPulse 2s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #00ff9d; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 30px #ff00ff, 0 0 40px #00ff9d; }
 }
 
-/* Foto Profil */
+/* Foto Profil dengan animasi muncul */
 .profile-pic {
   width: 160px; height: 160px;
   border-radius: 50%; overflow: hidden;
   box-shadow: 0 0 20px #0ff, 0 0 40px #f0f, 0 0 60px #0f0;
   margin: 60px 0 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeScale 1s ease forwards 0.2s;
 }
-.profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes fadeScale {
+  to { opacity: 1; transform: scale(1); }
+}
+.profile-pic:hover { transform: scale(1.05); transition: transform 0.3s ease; }
 
 /* Toggle di pojok kiri atas */
 #theme-toggle {
@@ -44,7 +55,7 @@ html { scroll-behavior: smooth; }
   border: none; border-radius: 50%;
   width: 50px; height: 50px;
   font-size: 1.5rem; cursor: pointer;
-  background: rgba(0,0,0,0); /* transparan */
+  background: rgba(0,0,0,0);
   color: white;
   z-index: 1000;
   display: flex; align-items: center; justify-content: center;
@@ -58,14 +69,8 @@ body.light-theme #theme-toggle {
   color: #ffdd00;
   text-shadow: 0 0 10px #ffdd00, 0 0 20px #fff;
 }
-.rotate {
-  animation: rotateIcon 0.5s ease;
-}
-@keyframes rotateIcon {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
-}
+.rotate { animation: rotateIcon 0.5s ease; }
+@keyframes rotateIcon { 0% {transform:rotate(0deg);}50%{transform:rotate(180deg);}100%{transform:rotate(360deg);} }
 
 /* Menu */
 .link-buttons {
@@ -114,5 +119,14 @@ a.tiktok:hover { box-shadow: 0 0 20px #FE2C55, 0 0 30px #25F4EE; }
 /* Icon Alight Motion */
 .icon-am { width: 28px; height: 28px; object-fit: contain; }
 
-/* Footer */
-footer { text-align: center; margin: 30px 0; font-size: 0.9rem; color: #aaa; }
+/* Footer dengan animasi fade-up */
+footer {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpFooter 1s ease forwards 0.5s;
+}
+@keyframes fadeUpFooter { to { opacity: 1; transform: translateY(0); } }
