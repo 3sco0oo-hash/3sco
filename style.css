@@ -18,8 +18,6 @@ body {
 }
 
 .neon-text {
-  font-size: 2.5rem;
-  font-weight: bold;
   background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
   background-size: 600% 600%;
   -webkit-background-clip: text;
