@@ -64,11 +64,6 @@ body {
   animation: gradientMove 5s ease infinite;
 }
 
-.socials p {
-  margin-top: 5px;
-  font-size: 10px;
-}
-
 .socials a:hover {
   transform: scale(1.3);
 }
