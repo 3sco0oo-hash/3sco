@@ -73,6 +73,37 @@ body {
   transform: scale(1.3);
 }
 
+.link-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.link-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+
+  background: #111; /* warna dasar tombol */
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+
+.link-buttons a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #25D366, #128C7E); /* gradasi WhatsApp */
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.7);
+}
+
 footer {
   position: absolute;
   bottom: 15px;
