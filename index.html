@@ -17,6 +17,9 @@
   <!-- Nama -->
   <h2 class="neon-text">Wilie? bisa jadi</h2>
 
+  <!-- Toggle Dark/Light Mode -->
+  <button id="theme-toggle">🌙</button>
+
   <!-- Menu -->
   <h4><em class="neon-text">Menu:</em></h4>
   <div class="link-buttons">
@@ -60,24 +63,33 @@
   <!-- Lisensi -->
   <footer>© 2025 Wilie. All rights reserved.</footer>
 
-  <!-- Scroll Reveal Script -->
+  <!-- Script -->
   <script>
+    // Scroll Reveal
     const reveals = document.querySelectorAll('.reveal');
-
     function revealOnScroll() {
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
         const elementVisible = 100;
-
         if (elementTop < windowHeight - elementVisible) {
           reveals[i].classList.add("show");
         }
       }
     }
-
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
+
+    // Dark/Light Toggle + Animasi
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      toggleBtn.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
+      
+      // Animasi rotate & bounce
+      toggleBtn.classList.add("animate");
+      setTimeout(() => toggleBtn.classList.remove("animate"), 600);
+    });
   </script>
 
 </body>
