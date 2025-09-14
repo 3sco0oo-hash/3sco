@@ -1,3 +1,4 @@
+/* Body & Mode */
 body {
   min-height: 100vh;
   display: flex;
@@ -11,13 +12,10 @@ body {
   padding: 0 15px;
   transition: background 0.5s ease, color 0.5s ease;
 }
-
-/* Mode Terang */
 body.light-theme {
   background: #f9f9f9;
   color: #111;
 }
-
 html { scroll-behavior: smooth; }
 
 /* Neon text */
@@ -29,54 +27,45 @@ html { scroll-behavior: smooth; }
   margin-bottom: 20px;
   text-align: center;
 }
-body.light-theme .neon-text {
-  background: linear-gradient(270deg, #0077ff, #ff0080, #00cc66);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-}
 
 /* Foto Profil */
 .profile-pic {
   width: 160px; height: 160px;
   border-radius: 50%; overflow: hidden;
   box-shadow: 0 0 20px #0ff, 0 0 40px #f0f, 0 0 60px #0f0;
-  margin: 80px 0 20px;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-body.light-theme .profile-pic {
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin: 60px 0 20px;
 }
 .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
-@keyframes glow {
-  from { box-shadow: 0 0 20px #0ff, 0 0 40px #f0f, 0 0 60px #0f0; }
-  to   { box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0; }
-}
-
-/* Animasi fade-in umum */
-.fade-in {
-  opacity: 0;
-  transform: scale(0.9);
-  animation: fadeZoom 1s ease forwards;
-}
-@keyframes fadeZoom {
-  to { opacity: 1; transform: scale(1); }
-}
 
 /* Toggle di pojok kiri atas */
 #theme-toggle {
   position: fixed;
   top: 15px; left: 15px;
   border: none; border-radius: 50%;
-  width: 45px; height: 45px;
-  font-size: 1.2rem; cursor: pointer;
-  background: #333; color: white;
-  box-shadow: 0 0 10px #666;
+  width: 50px; height: 50px;
+  font-size: 1.5rem; cursor: pointer;
+  background: rgba(0,0,0,0); /* transparan */
+  color: white;
   z-index: 1000;
-  transition: transform 0.3s ease, background 0.5s ease, color 0.5s ease;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s ease, color 0.5s ease, text-shadow 0.5s ease;
 }
-#theme-toggle:hover { transform: scale(1.1); }
-body.light-theme #theme-toggle { background: #ddd; color: #111; }
+#theme-toggle:hover {
+  transform: scale(1.3) rotate(20deg);
+  text-shadow: 0 0 10px #fff, 0 0 20px #ffdd00;
+}
+body.light-theme #theme-toggle {
+  color: #ffdd00;
+  text-shadow: 0 0 10px #ffdd00, 0 0 20px #fff;
+}
+.rotate {
+  animation: rotateIcon 0.5s ease;
+}
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
 
 /* Menu */
 .link-buttons {
@@ -96,12 +85,12 @@ body.light-theme #theme-toggle { background: #ddd; color: #111; }
 .link-buttons a:hover { transform: scale(1.05); }
 
 /* Delay animasi tombol */
-.link-buttons a:nth-child(1) { animation-delay: 0.3s; }
-.link-buttons a:nth-child(2) { animation-delay: 0.5s; }
-.link-buttons a:nth-child(3) { animation-delay: 0.7s; }
-.link-buttons a:nth-child(4) { animation-delay: 0.9s; }
-.link-buttons a:nth-child(5) { animation-delay: 1.1s; }
-.link-buttons a:nth-child(6) { animation-delay: 1.3s; }
+.link-buttons a:nth-child(1) { animation-delay: 0.2s; }
+.link-buttons a:nth-child(2) { animation-delay: 0.4s; }
+.link-buttons a:nth-child(3) { animation-delay: 0.6s; }
+.link-buttons a:nth-child(4) { animation-delay: 0.8s; }
+.link-buttons a:nth-child(5) { animation-delay: 1s; }
+.link-buttons a:nth-child(6) { animation-delay: 1.2s; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -109,21 +98,11 @@ body.light-theme #theme-toggle { background: #ddd; color: #111; }
 }
 
 /* Tombol dengan gradasi brand */
-a.whatsapp {
-  background: linear-gradient(90deg, #25D366, #128C7E);
-}
-a.alightmotion {
-  background: linear-gradient(90deg, #00C2CB, #007A7A);
-}
-a.discord {
-  background: linear-gradient(90deg, #5865F2, #3A45B3);
-}
-a.instagram {
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-}
-a.tiktok {
-  background: linear-gradient(45deg, #FE2C55, #25F4EE, #000000);
-}
+a.whatsapp { background: linear-gradient(90deg, #25D366, #128C7E); }
+a.alightmotion { background: linear-gradient(90deg, #00C2CB, #007A7A); }
+a.discord { background: linear-gradient(90deg, #5865F2, #3A45B3); }
+a.instagram { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
+a.tiktok { background: linear-gradient(45deg, #FE2C55, #25F4EE, #000000); }
 
 /* Hover Glow sesuai brand */
 a.whatsapp:hover { box-shadow: 0 0 20px #25D366; }
@@ -135,15 +114,5 @@ a.tiktok:hover { box-shadow: 0 0 20px #FE2C55, 0 0 30px #25F4EE; }
 /* Icon Alight Motion */
 .icon-am { width: 28px; height: 28px; object-fit: contain; }
 
-/* Footer + animasi */
-footer {
-  text-align: center;
-  margin: 40px 0 20px;
-  font-size: 0.9rem;
-  color: #aaa;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards;
-  animation-delay: 1.6s;
-}
-body.light-theme footer { color: #555; }
+/* Footer */
+footer { text-align: center; margin: 30px 0; font-size: 0.9rem; color: #aaa; }

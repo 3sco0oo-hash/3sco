@@ -10,18 +10,18 @@
 <body>
 
   <!-- Toggle Dark/Light Mode (pojok kiri atas) -->
-  <button id="theme-toggle">🌙</button>
+  <button id="theme-toggle"><i class="fas fa-moon"></i></button>
 
   <!-- Foto Profil -->
-  <div class="profile-pic fade-in">
+  <div class="profile-pic">
     <img src="profil.jpg" alt="Foto Profil" />
   </div>
 
   <!-- Nama -->
-  <h2 class="neon-text fade-in">Wilie? bisa jadi</h2>
+  <h2 class="neon-text">Wilie? bisa jadi</h2>
 
   <!-- Menu -->
-  <h4><em class="neon-text fade-in">Menu:</em></h4>
+  <h4><em class="neon-text">Menu:</em></h4>
   <div class="link-buttons">
     <a class="whatsapp" href="https://wa.me/6281411086900?text=Halo%20kak%2C%20saya%20mau%20buy%20am%20prem" target="_blank">
       <i class="fab fa-whatsapp"></i> Buy Am Prem Here!
@@ -44,14 +44,24 @@
   </div>
 
   <!-- Lisensi -->
-  <footer class="fade-footer">© 2025 Wilie. All rights reserved.</footer>
+  <footer>© 2025 Wilie. All rights reserved.</footer>
 
   <!-- Script -->
   <script>
     const toggleBtn = document.getElementById("theme-toggle");
+
     toggleBtn.addEventListener("click", () => {
+      // Animasi putar ikon
+      toggleBtn.classList.add("rotate");
+      setTimeout(() => toggleBtn.classList.remove("rotate"), 500);
+
+      // Toggle tema
       document.body.classList.toggle("light-theme");
-      toggleBtn.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
+
+      // Ganti ikon
+      toggleBtn.innerHTML = document.body.classList.contains("light-theme") 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
     });
   </script>
 
