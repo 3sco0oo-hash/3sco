@@ -1,80 +1,121 @@
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #2e2e2e, #1c1c1c);
-  color: white;
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
 }
 
-@keyframes gradientMove {
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-pic img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px #0ff, 0 0 50px #0ff, 0 0 100px #0ff;
+  animation: pulseGlow 3s infinite alternate;
+}
+
+/* Teks Neon */
+.neon-text {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #0ff, #f0f, #0f0, #ff0, #0ff);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGradient 8s ease infinite, pulseGlow 3s infinite alternate;
+  margin-top: 20px;
+}
+
+.about {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 20px auto;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #0ff;
+}
+
+/* Animasi mengetik */
+.typing {
+  animation: typing 10s steps(100, end), blink 0.8s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Ikon Sosial */
+.social-icons {
+  margin-top: 25px;
+  position: relative;
+}
+
+.social-icons a {
+  position: relative;
+  color: #0ff;
+  font-size: 2rem;
+  margin: 0 15px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+}
+
+/* Tooltip */
+.social-icons a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 255, 0.2);
+  color: #0ff;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Animasi Gradasi & Glow */
+@keyframes neonGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.neon-text {
-  font-size: 2.5rem;
-  font-weight: bold;
-  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #f0f, 0 0 30px #0f0;
-  margin-bottom: 20px;
-  animation: gradientMove 5s ease infinite;
-}
-
-.profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid transparent;
-  border-image: linear-gradient(90deg, #00f0ff, #ff00ff, #00ff9d) 1;
-  box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0f0;
-  margin-bottom: 20px;
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0f0; }
-  to { box-shadow: 0 0 40px #0ff, 0 0 60px #f0f, 0 0 80px #0f0; }
-}
-
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.socials {
-  display: flex;
-  gap: 25px;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.socials a {
-  background: linear-gradient(270deg, #00f0ff, #ff00ff, #00ff9d);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease;
-  animation: gradientMove 5s ease infinite;
-}
-
-.socials a:hover {
-  transform: scale(1.3);
-}
-
-footer {
-  position: absolute;
-  bottom: 15px;
-  font-size: 0.9rem;
-  color: #aaa;
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 15px #0ff, 0 0 40px #0ff, 0 0 80px #0ff; }
+  to { box-shadow: 0 0 25px #0ff, 0 0 60px #0ff, 0 0 120px #0ff; }
 }
